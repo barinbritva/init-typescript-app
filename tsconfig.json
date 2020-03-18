@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "CommonJS",
+    "sourceMap": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": false,
+    "noFallthroughCasesInSwitch": true,
+    "strictFunctionTypes": true,
+    "removeComments": true,
+    "lib": [
+      "es6",
+      "dom"
+    ]
+  },
+  "include": [
+    "./src"
+  ]
+}
