@@ -1,53 +1,60 @@
 {
   "name": "create-typescript-app",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Set up TypeScript app by running one command.",
-  "main": "./dist/index.js",
-  "scripts": {
-    "build": "tasks/build.sh",
-    "start": "node ./dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/barinbritva/create-typescript-app.git"
-  },
   "keywords": [
     "typescript",
-    "app",
+    "build-tools",
+    "zero-configuration",
+    "package-creation",
     "boilerplate"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/barinbritva/create-typescript-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/barinbritva/create-typescript-app/issues"
+  },
+  "homepage": "https://github.com/barinbritva/create-typescript-app#readme",
   "author": {
     "name": "Barin Britva",
     "email": "barinbritva@outlook.com",
     "url": "https://barinbritva.ru"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/barinbritva/create-typescript-app/issues"
+  "main": "./dist/index.js",
+  "bin": {
+    "create-typescript-app": "./dist/cli.js"
   },
-  "homepage": "https://github.com/barinbritva/create-typescript-app#readme",
+  "scripts": {
+    "build": "./tasks/build.sh",
+    "build:dev": "./tasks/build.sh -d",
+    "start": "node ./dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "./tasks/release.sh"
+  },
   "devDependencies": {
-    "@types/ejs": "^3.0.1",
-    "@types/inquirer": "^6.5.0",
-    "@typescript-eslint/eslint-plugin": "^2.24.0",
-    "@typescript-eslint/parser": "^2.24.0",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-config-standard-with-typescript": "^15.0.0",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-prettier": "^3.1.2",
+    "@types/ejs": "^3.0.4",
+    "@types/inquirer": "^7.3.0",
+    "@typescript-eslint/eslint-plugin": "^3.9.0",
+    "@typescript-eslint/parser": "^3.9.0",
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-standard-with-typescript": "^18.0.2",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "husky": "^4.2.3",
-    "lint-staged": "^10.0.8",
-    "prettier": "^1.19.1",
-    "typescript": "^3.8.3"
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.7"
   },
   "dependencies": {
-    "ejs": "^3.0.1",
-    "inquirer": "^7.1.0"
+    "ejs": "^3.1.3",
+    "inquirer": "^7.3.3"
   },
   "lint-staged": {
     "*.{ts,js,tsx,jsx}": [

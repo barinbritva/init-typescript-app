@@ -5,10 +5,11 @@ async function createApp (): Promise<void> {
   const configurator = new AppConfigurator()
   const appConfig = await configurator.askUser()
 
-  console.log('appConfig', appConfig)
+  console.debug('appConfig', appConfig)
 
   const generator = new AppGenerator(appConfig)
   await generator.createApp()
+  // todo run git init
 }
 
 createApp()

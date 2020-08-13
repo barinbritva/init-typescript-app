@@ -1,0 +1,4 @@
+import Greeter from './Greeter'
+
+const greeter = new Greeter(<% if (author) { %>'<%= author %>'<% } else { %> 'there' <% } %>, '<%= projectName %>')
+greeter.sayHello()

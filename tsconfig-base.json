@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "alwaysStrict": true,
+    "downlevelIteration": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": [
+      "ES2015",
+      "DOM"
+    ],
+    "module": "UMD",
+    "moduleResolution": "Node",
+    "target": "ES2015",
+    "removeComments": true
+  },
+  "include": [
+    "./src"
+  ]
+}

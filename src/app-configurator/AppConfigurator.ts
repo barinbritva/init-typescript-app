@@ -1,25 +1,21 @@
-import * as fs from 'fs'
-import * as inquirer from 'inquirer'
-import { QuestionCollection } from 'inquirer'
+import fs from 'fs'
+import inquirer, { ChoiceOptions, QuestionCollection } from 'inquirer'
 import AppConfig from './AppConfig'
 import ConfigProperty from './ConfigProperty'
+import License from './License'
+import licenses from './licenses'
 
 export default class AppConfigurator {
   public async askUser (): Promise<AppConfig> {
     const questions: QuestionCollection = [
       {
-        type: 'list',
-        name: ConfigProperty.Type,
-        message: 'Project type:',
-        choices: ['app', 'libraty']
-      },
-      {
         type: 'input',
         name: ConfigProperty.Name,
         message: 'Project name:',
         validate (input: string): boolean|string {
+          // todo more checks
           if (input.length === 0) {
-            return 'Project name have not to be empty.'
+            return 'Project name can not be empty.'
           }
 
           if (fs.existsSync(input)) {
@@ -30,13 +26,70 @@ export default class AppConfigurator {
         }
       },
       {
+        type: 'list',
+        name: ConfigProperty.License,
+        message: 'Choose license:',
+        suffix: '\nSelect "None" if don\'t care.',
+        choices: this.generateLicenseOptions(),
+        loop: false
+      },
+      {
         type: 'input',
         name: ConfigProperty.Author,
-        message: 'Author name:'
+        message: 'Author name:',
+        suffix: '\nFor using in license agreement.\n',
+        when: (answers: Partial<AppConfig>) => {
+          return answers.license != null
+        },
+        validate (input: string): boolean|string {
+          if (input.length === 0) {
+            return 'Author name can not be empty if a license chosen.'
+          }
+
+          return true
+        }
+      },
+      {
+        type: 'list',
+        name: ConfigProperty.TsAdvanced,
+        message: 'Base or Advanced type checking:',
+        suffix: '\nBase is recommended for beginners in TypeScript.',
+        choices: [
+          {
+            name: 'Base type checking',
+            value: false
+          },
+          {
+            name: 'Advanced type checking',
+            value: true
+          }
+        ]
       }
     ]
 
-    const config = await inquirer.prompt<AppConfig>(questions)
+    const config: AppConfig = await inquirer.prompt<AppConfig>(questions)
+
+    if (config.author == null) {
+      config.author = ''
+    }
+
     return config
+  }
+
+  private generateLicenseOptions (): ChoiceOptions[] {
+    const options: ChoiceOptions[] = licenses.map((license: License) => {
+      return {
+        name: license.name,
+        value: license
+      }
+    })
+    options.unshift(
+      {
+        name: 'None',
+        value: null
+      }
+    )
+
+    return options
   }
 }

@@ -1,7 +1,8 @@
 enum ConfigProperty {
-  Type = 'type',
+  Author = 'author',
   Name = 'name',
-  Author = 'author'
+  License = 'license',
+  TsAdvanced = 'tsAdvanced'
 }
 
 export default ConfigProperty

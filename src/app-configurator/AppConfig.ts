@@ -1,7 +1,9 @@
 import ConfigProperty from './ConfigProperty'
+import License from './License'
 
 export default interface AppConfig {
-  [ConfigProperty.Name]: string
-  [ConfigProperty.Type]: string
   [ConfigProperty.Author]: string
+  [ConfigProperty.Name]: string
+  [ConfigProperty.License]: License | null
+  [ConfigProperty.TsAdvanced]: boolean
 }
