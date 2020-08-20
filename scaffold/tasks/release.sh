@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 echo "Check if working directory clean."
 if [ -n "$(git status --porcelain)" ]; then

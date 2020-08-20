@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 buildCommand="tsc --outDir ./dist --declaration true"
 if getopts ":d" arg; then
