@@ -11,7 +11,7 @@
       "ES2015",
       "DOM"
     ],
-    "module": "UMD",
+    "module": "CommonJS",
     "moduleResolution": "Node",
     "target": "ES2015",
     "removeComments": true
