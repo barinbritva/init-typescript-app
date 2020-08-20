@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 
 echo "Check if working directory clean."
 if [ -n "$(git status --porcelain)" ]; then

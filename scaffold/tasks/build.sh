@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 
 buildCommand="tsc --outDir ./dist --declaration true"
 if getopts ":d" arg; then
@@ -17,4 +17,4 @@ if [ -d "./dist" ]; then
 fi
 
 echo "Build command: $buildCommand"
-eval $buildCommand
+eval "$buildCommand"
