@@ -9,7 +9,6 @@ async function createApp (): Promise<void> {
 
   const generator = new AppGenerator(appConfig)
   await generator.createApp()
-  // todo run git init
 }
 
 createApp()

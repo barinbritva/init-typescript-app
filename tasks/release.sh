@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# todo check is git repository
-# todo check master branch
 echo "Check if working directory clean."
 if [ -n "$(git status --porcelain)" ]; then
   echo "Git working directory not clean. Please commit changes or stash them before release."

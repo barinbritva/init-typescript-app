@@ -13,7 +13,6 @@ export default class AppConfigurator {
         name: ConfigProperty.Name,
         message: 'Project name:',
         validate (input: string): boolean|string {
-          // todo more checks
           if (input.length === 0) {
             return 'Project name can not be empty.'
           }
