@@ -1,5 +1,7 @@
 # Create TypeScript App
 
+[![MIT License][license-badge]][license]
+
 This is clean framework/technology agnostic `TypeScript` setup.
 
 First of all, it's written to help quickly create `npm` packages in TypeScript. With `create-typescript-app` you can think only about your project. All other things `create-typescript-app` will take care of the rest.
