@@ -11,11 +11,12 @@ echo "Run build process."
 npm run build
 
 packageVersion=$(grep version package.json | cut -c 15- | rev | cut -c 3- | rev)
-echo "Tag version as $packageVersion."
-git tag "$packageVersion"
 
 echo "Publish package as $packageVersion."
 npm publish --access public
+
+echo "Tag version as $packageVersion."
+git tag "$packageVersion"
 
 echo "Bump package version."
 npm --no-git-tag-version version patch
