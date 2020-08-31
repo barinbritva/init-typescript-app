@@ -16,7 +16,7 @@ createApp()
   .then((config: AppConfig) => {
     const message = '\nIt\'s time to craft!' +
       `\n\ncd ${config.name}\nnpm install\nnpm run build:dev` +
-      '\n\nFor more information visit https://github.com/barinbritva/create-typescript-app'
+      '\n\nFor more information visit https://github.com/barinbritva/init-typescript-app'
     console.info(message)
   })
   .catch((error) => {

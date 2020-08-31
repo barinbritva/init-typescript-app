@@ -1,22 +1,23 @@
 {
-  "name": "create-typescript-app",
+  "name": "init-typescript-app",
   "version": "1.0.0",
-  "description": "Set up TypeScript app by running one command.",
+  "description": "Initialize TypeScript app by running single command.",
   "keywords": [
     "typescript",
-    "build-tools",
+    "build-tool",
     "zero-configuration",
     "package-creation",
-    "boilerplate"
+    "boilerplate",
+    "starter-kit"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/barinbritva/create-typescript-app.git"
+    "url": "https://github.com/barinbritva/init-typescript-app.git"
   },
   "bugs": {
-    "url": "https://github.com/barinbritva/create-typescript-app/issues"
+    "url": "https://github.com/barinbritva/init-typescript-app/issues"
   },
-  "homepage": "https://github.com/barinbritva/create-typescript-app#readme",
+  "homepage": "https://github.com/barinbritva/init-typescript-app#readme",
   "author": {
     "name": "Barin Britva",
     "email": "barinbritva@outlook.com",
@@ -25,7 +26,7 @@
   "license": "MIT",
   "main": "./dist/index.js",
   "bin": {
-    "create-typescript-app": "./dist/cli.js"
+    "init-typescript-app": "./dist/cli.js"
   },
   "scripts": {
     "build": "./tasks/build.sh",

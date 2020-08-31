@@ -1,9 +1,9 @@
-# Create TypeScript App
-[![License](https://img.shields.io/npm/l/micromatch?style=flat-square)](https://github.com/barinbritva/create-typescript-app/blob/master/LICENSE)
+# Init TypeScript App
+[![License](https://img.shields.io/npm/l/micromatch?style=flat-square)](https://github.com/barinbritva/init-typescript-app/blob/master/LICENSE)
 
 This is clean framework/technology agnostic `TypeScript` setup.
 
-First of all, it's written to help quickly create `npm` packages in TypeScript. With `create-typescript-app` you can think only about your project. All other things `create-typescript-app` will take care of the rest.
+First of all, it's written to help quickly create `npm` packages in TypeScript. With `init-typescript-app` you can think only about your project. All other things `init-typescript-app` will take care of the rest.
 
 It's also a good idea to use it like a starting point for any of your projects.
 
@@ -18,7 +18,7 @@ It's also a good idea to use it like a starting point for any of your projects.
 ## 🚀 Launch your project
 ### Quick overview
 ```sh
-npx create-typescript-app
+npx init-typescript-app
 # then answer for a few questions in cli
 cd project-name
 npm install
@@ -28,7 +28,7 @@ npm start
 
 You are all set up!
 
-You are also able to install `create-typescript-app` globally if you are using `npm` of version lower than `5.2.0`.
+You are also able to install `init-typescript-app` globally if you are using `npm` of version lower than `5.2.0`.
 
 _In the documentation we always use `npm` in all examples to be short. Of course, you can use any of package managers `npm` or `yarn`._
 
@@ -117,7 +117,7 @@ Ok! You are ready to work on the next version!
 
 ## 💡 Tips and tricks
 ### Customization
-Have no concerns to change everything you need for your project. After once you run `create-typescript-app` you fully control your project. It's ok to edit `tsconfig.json` options or even change `build` or `release` scripts. Just a few examples what you may want to change:
+Have no concerns to change everything you need for your project. After once you run `init-typescript-app` you fully control your project. It's ok to edit `tsconfig.json` options or even change `build` or `release` scripts. Just a few examples what you may want to change:
 * Pass change some params to build process or add extra steps to it
 * Change your publication process to push the package for `private` access instead of `public`. To do that remove `--access public` from publish command in `release.sh`
 * Change bumping commit text
@@ -176,7 +176,7 @@ interface Window {
 * **Applications templates.** Create not only libraries, but frontend and backend applications too.
 
 ## 🔙 Feedback
-Your feedback is really important for the project. Please, use contacts from [my profile](https://github.com/barinbritva) to send your questions, suggestions, help requests and others. Also, feel free to use [issues](https://github.com/barinbritva/create-typescript-app/issues) section to report bugs and problems.
+Your feedback is really important for the project. Please, use contacts from [my profile](https://github.com/barinbritva) to send your questions, suggestions, help requests and others. Also, feel free to use [issues](https://github.com/barinbritva/init-typescript-app/issues) section to report bugs and problems.
 
 ## 📄 License
-MIT, see [LICENSE](https://github.com/barinbritva/create-typescript-app/blob/master/LICENSE) for the details.
+MIT, see [LICENSE](https://github.com/barinbritva/init-typescript-app/blob/master/LICENSE) for the details.
