@@ -1,5 +1,5 @@
 # Create TypeScript App
-[![License](https://img.shields.io/npm/l/micromatch?style=flat-square)](https://npm.im/create-typescript-app)
+[![License](https://img.shields.io/npm/l/micromatch?style=flat-square)](https://github.com/barinbritva/create-typescript-app/blob/master/LICENSE)
 
 This is clean framework/technology agnostic `TypeScript` setup.
 
