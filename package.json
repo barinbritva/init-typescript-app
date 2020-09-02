@@ -1,6 +1,6 @@
 {
   "name": "init-typescript-app",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Initialize TypeScript app by running single command.",
   "keywords": [
     "typescript",
