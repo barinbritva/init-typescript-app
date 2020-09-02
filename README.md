@@ -114,7 +114,7 @@ README.md (and its variants)
 CHANGELOG.md (and its variants)
 LICENSE
 ```
-If you add new files or directories, it's necessary to include them to `files` section of your `package.json`. Run `npm pack` and check out output tarball before release.
+If you add new files or directories, it's necessary to include them to [`files`](https://docs.npmjs.com/files/package.json#files) section of your `package.json`. Run `npm pack` and check out output tarball before release.
 _More information about it and other helpful development techniques you can read in [npm developer guide](https://docs.npmjs.com/misc/developers)._
 
 #### How publication works under the hood
@@ -180,6 +180,7 @@ interface Window {
 
 ## 🗺 Roadmap
 ### In version `1.x`
+* **Windows support.** Current version works on Linux and MacOS.
 * **Tests.** Test frameworks, code coverage.
 * **Code standards.** Setting up `eslint`, auto code formatting.
 * **Pull-request bots.** Checking code coverage, dependencies vulnerabilities, etc
