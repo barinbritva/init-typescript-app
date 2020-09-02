@@ -6,7 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Changed
-- Fix templates copying
+- Fix templates copying.
+- Add "v" prefix for git version tags.
 
 ## [1.0.1] - 2020-09-01
 ### Added

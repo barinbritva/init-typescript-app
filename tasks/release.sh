@@ -16,7 +16,7 @@ echo "Publish package as $packageVersion."
 npm publish --access public
 
 echo "Tag version as $packageVersion."
-git tag "$packageVersion"
+git tag v"$packageVersion"
 
 echo "Bump package version."
 npm --no-git-tag-version version patch
