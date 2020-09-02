@@ -36,8 +36,8 @@ class AppGenerator {
       } else {
         await this.copyFile('_tsconfig/tsconfig-base.json', {}, 'tsconfig.json')
       }
-      await this.copyFile('tasks/build.sh')
-      await this.copyFile('tasks/release.sh')
+      const buildTaskPath = await this.copyFile('tasks/build.sh')
+      const releaseTaskPath = await this.copyFile('tasks/release.sh')
       await this.copyFile('_gitignore', {}, '.gitignore')
       await this.copyFile(
         'package.json.ejs',
@@ -56,6 +56,9 @@ class AppGenerator {
           projectName: this.config.name
         }
       )
+
+      this.grantExecutePermission(buildTaskPath)
+      this.grantExecutePermission(releaseTaskPath)
     } catch (error) {
       await this.removeAppFolder()
       throw error
@@ -70,7 +73,7 @@ class AppGenerator {
     fs.rmdirSync(this.config.name, { recursive: true })
   }
 
-  private async copyFile (tplPath: string, tplData?: object, destPath?: string): Promise<void> {
+  private async copyFile (tplPath: string, tplData?: object, destPath?: string): Promise<string> {
     const copyDestPath: string = this.removeEjsExtensionFromPath(destPath ?? tplPath)
     const absoluteCopyDestPath: string = path.join(this.projectPath, copyDestPath)
     const absoluteCopyDestDir: string = path.dirname(absoluteCopyDestPath)
@@ -81,6 +84,8 @@ class AppGenerator {
       fs.mkdirSync(absoluteCopyDestDir, { recursive: true })
     }
     fs.writeFileSync(absoluteCopyDestPath, content)
+
+    return absoluteCopyDestPath
   }
 
   private removeEjsExtensionFromPath (filePath: string): string {
@@ -89,6 +94,10 @@ class AppGenerator {
     }
 
     return filePath
+  }
+
+  grantExecutePermission (filePath: string): void {
+    fs.chmodSync(filePath, '755')
   }
 }
 
