@@ -25,6 +25,10 @@
   },
   "license": "MIT",
   "main": "./dist/index.js",
+  "files": [
+    "/dist",
+    "/scaffold"
+  ],
   "bin": {
     "init-typescript-app": "./dist/cli.js"
   },

@@ -39,7 +39,6 @@ class AppGenerator {
       await this.copyFile('tasks/build.sh')
       await this.copyFile('tasks/release.sh')
       await this.copyFile('.gitignore')
-      await this.copyFile('.npmignore')
       await this.copyFile(
         'package.json.ejs',
         {

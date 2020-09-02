@@ -1,7 +1,0 @@
-.idea
-src
-tasks
-.eslintignore
-.eslintrc.json
-tsconfig.json
-tsconfig-base.json

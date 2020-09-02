@@ -80,6 +80,10 @@ That's why these checks are switched off for development. You won't get these er
 ## 📮 Publish your package
 When the first version of your package is ready to see the world, it's time to publish it.
 
+_Just run `npm run release` from the root directory of your project. That's it!_
+
+But before you start, please, check out next information in this section.
+
 ### Check your git setup
 To use publication features it's necessary for your project to be a `git` repository.
 ```sh
@@ -99,8 +103,19 @@ To publish your package it's necessary to be signed in via your [`npm`](https://
 
 _Of course, you can use any package registry you want, e.g. `npm.pkg.github.com`._
 
-### Publish
-From the root dir of your project run `npm run release`. That's it!
+### Check your files
+It's necessary to be sure you publish what you exactly mean to publish. Using `.npmignore` is antipattern (you can read more information about it [here](https://medium.com/@jdxcode/for-the-love-of-god-dont-use-npmignore-f93c08909d8d) and [here](https://blog.npmjs.org/post/165769683050/publishing-what-you-mean-to-publish)). By default, only next files will be included into your package:
+```
+# your built files, included via package.json
+dist
+# next files are included by npm by default:
+package.json
+README.md (and its variants)
+CHANGELOG.md (and its variants)
+LICENSE
+```
+If you add new files or directories, it's necessary to include them to `files` section of your `package.json`. Run `npm pack` and check out output tarball before release.
+_More information about it and other helpful development techniques you can read in [npm developer guide](https://docs.npmjs.com/misc/developers)._
 
 #### How publication works under the hood
 The release script does next:
