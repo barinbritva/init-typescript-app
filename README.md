@@ -180,7 +180,6 @@ interface Window {
 
 ## 🗺 Roadmap
 ### In version `1.x`
-* **Windows support.** Current version works on Linux and MacOS.
 * **Tests.** Test frameworks, code coverage.
 * **Code standards.** Setting up `eslint`, auto code formatting.
 * **Pull-request bots.** Checking code coverage, dependencies vulnerabilities, etc

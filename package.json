@@ -21,7 +21,7 @@
   "author": {
     "name": "Barin Britva",
     "email": "barinbritva@outlook.com",
-    "url": "https://barinbritva.ru"
+    "url": "https://barinbritva.com"
   },
   "license": "MIT",
   "main": "./dist/index.js",
@@ -32,12 +32,13 @@
   "bin": {
     "init-typescript-app": "./dist/cli.js"
   },
+  "types": "./dist/__types__",
   "scripts": {
-    "build": "./tasks/build.sh",
-    "build:dev": "./tasks/build.sh -d",
+    "build": "ts-node ./tasks/run-build.ts",
+    "build:dev": "ts-node --project ./tsconfig-dev.json ./tasks/run-build.ts -d",
     "start": "node ./dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "./tasks/release.sh"
+    "release": "NODE_ENV=production ts-node ./tasks/release.ts"
   },
   "devDependencies": {
     "@types/ejs": "^3.0.4",
@@ -55,6 +56,7 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
+    "ts-node": "^9.1.1",
     "typescript": "^3.9.7"
   },
   "dependencies": {
@@ -68,7 +70,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "tsc --noEmit && lint-staged"
+      "pre-commit": "lint-staged && tsc --noEmit"
     }
   }
 }

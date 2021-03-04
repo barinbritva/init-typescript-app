@@ -5,18 +5,21 @@
   "files": [
     "/dist"
   ],
+  "types": "./dist/__types__",
   "scripts": {
-    "build": "./tasks/build.sh",
-    "build:dev": "./tasks/build.sh -d",
+    "build": "ts-node ./tasks/run-build.ts",
+    "build:dev": "ts-node --project ./tsconfig-dev.json ./tasks/run-build.ts -d",
     "start": "node ./dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "./tasks/release.sh"
+    "release": "NODE_ENV=production ts-node ./tasks/release.ts"
   },<% if (author) { %>
   "author": {
     "name": "<%= author %>"
   },<% } %><% if (license) { %>
   "license": "<%= license.id %>",<% } %>
   "devDependencies": {
+    "@types/node": "^14.14.31",
+    "ts-node": "^9.1.1",
     "typescript": "^3.9.7"
   }
 }
