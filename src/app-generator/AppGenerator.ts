@@ -36,18 +36,21 @@ class AppGenerator {
         await this.copyFile('_tsconfig/tsconfig-base.json', {}, 'tsconfig.json')
       }
       await this.copyFile('_tsconfig/tsconfig-dev.json', {}, 'tsconfig-dev.json')
-      await this.copyFile('tasks/build.ts')
       await this.copyFile('tasks/process.ts')
-      await this.copyFile('tasks/release.ts')
+      await this.copyFile('tasks/build.ts')
       await this.copyFile('tasks/run-build.ts')
-      await this.copyFile('tasks/run-release.ts')
+      if (this.config.isNpmPackage) {
+        await this.copyFile('tasks/release.ts')
+        await this.copyFile('tasks/run-release.ts')
+      }
       await this.copyFile('_gitignore', {}, '.gitignore')
       await this.copyFile(
         'package.json.ejs',
         {
           name: this.config.name,
           author: this.config.author,
-          license: this.config.license
+          license: this.config.license,
+          isNpmPackage: this.config.isNpmPackage
         }
       )
       await this.copyFile('README.md')

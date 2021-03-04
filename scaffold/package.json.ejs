@@ -10,8 +10,8 @@
     "build": "ts-node ./tasks/run-build.ts",
     "build:dev": "ts-node --project ./tsconfig-dev.json ./tasks/run-build.ts -d",
     "start": "node ./dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "NODE_ENV=production ts-node ./tasks/release.ts"
+    "test": "echo \"Error: no test specified\" && exit 1"<% if (isNpmPackage) {%>,
+    "release": "NODE_ENV=production ts-node ./tasks/release.ts"<% } %>
   },<% if (author) { %>
   "author": {
     "name": "<%= author %>"

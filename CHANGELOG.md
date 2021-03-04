@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - Windows support (by rewriting tasks from bash to js).
+- Project option: `package` for `npm` or any `app`.
 
 ## [1.0.9] - 2020-09-02
 ### Added

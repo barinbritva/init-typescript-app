@@ -38,7 +38,7 @@
     "build:dev": "ts-node --project ./tsconfig-dev.json ./tasks/run-build.ts -d",
     "start": "node ./dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "NODE_ENV=production ts-node ./tasks/release.ts"
+    "release": "ts-node ./tasks/release.ts"
   },
   "devDependencies": {
     "@types/ejs": "^3.0.4",
