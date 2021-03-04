@@ -31,13 +31,16 @@ class AppGenerator {
         )
       }
       if (this.config.tsAdvanced) {
-        await this.copyFile('_tsconfig/tsconfig-base.json', {}, 'tsconfig-base.json')
         await this.copyFile('_tsconfig/tsconfig-advanced.json', {}, 'tsconfig.json')
       } else {
         await this.copyFile('_tsconfig/tsconfig-base.json', {}, 'tsconfig.json')
       }
-      const buildTaskPath = await this.copyFile('tasks/build.sh')
-      const releaseTaskPath = await this.copyFile('tasks/release.sh')
+      await this.copyFile('_tsconfig/tsconfig-dev.json', {}, 'tsconfig-dev.json')
+      await this.copyFile('tasks/build.ts')
+      await this.copyFile('tasks/process.ts')
+      await this.copyFile('tasks/release.ts')
+      await this.copyFile('tasks/run-build.ts')
+      await this.copyFile('tasks/run-release.ts')
       await this.copyFile('_gitignore', {}, '.gitignore')
       await this.copyFile(
         'package.json.ejs',
@@ -56,9 +59,6 @@ class AppGenerator {
           projectName: this.config.name
         }
       )
-
-      this.grantExecutePermission(buildTaskPath)
-      this.grantExecutePermission(releaseTaskPath)
     } catch (error) {
       await this.removeAppFolder()
       throw error
@@ -94,10 +94,6 @@ class AppGenerator {
     }
 
     return filePath
-  }
-
-  grantExecutePermission (filePath: string): void {
-    fs.chmodSync(filePath, '755')
   }
 }
 

@@ -7,10 +7,17 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "UMD",
+    "module": "CommonJS",
     "moduleResolution": "Node",
     "target": "ES2015",
-    "removeComments": true
+    "outDir": "./dist",
+    "declaration": true,
+    "declarationDir": "./dist/__types__",
+    "resolveJsonModule": true,
+
+    "removeComments": true,
+    "sourceMap": false,
+    "watch": false
   },
   "include": [
     "./src"
