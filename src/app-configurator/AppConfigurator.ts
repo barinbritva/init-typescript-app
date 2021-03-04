@@ -26,6 +26,21 @@ export default class AppConfigurator {
       },
       {
         type: 'list',
+        name: ConfigProperty.NpmPackage,
+        message: 'Project type:',
+        choices: [
+          {
+            name: 'npm package',
+            value: true
+          },
+          {
+            name: 'some app',
+            value: false
+          }
+        ]
+      },
+      {
+        type: 'list',
         name: ConfigProperty.License,
         message: 'Choose license:',
         suffix: '\nSelect "None" if don\'t care.',

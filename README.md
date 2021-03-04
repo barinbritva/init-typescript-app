@@ -1,19 +1,19 @@
 # Init TypeScript App
 [![License](https://img.shields.io/npm/l/micromatch?style=flat-square)](https://github.com/barinbritva/init-typescript-app/blob/master/LICENSE)
 
-This is clean framework/technology agnostic `TypeScript` setup.
+## 🌟 Motivation
 
-First of all, it's written to help quickly create `npm` packages in TypeScript. With `init-typescript-app` you can think only about your project. All other things `init-typescript-app` will take care of the rest.
+You are in the right repo if you want to:
 
-It's also a good idea to use it like a starting point for any of your projects.
+* quickly get pure, technology agnostic `TypeScript` setup for further customization;
+* easily create your own `npm` package.
 
-## 📦 What in the box
+## 📦 Features
 
-* **Customizable TypeScript configuration.** If you just want to make your project work in TypeScript and not get a lot of difficulties which may be related with it, you can choose `base mode`. _By the way, it's the greatest choice if you just start learning TypeScript._ For advanced TypeScript users there is `advanced node` which includes all kinds of checks.
-
-* **Easy and quick publication.** No more fuss with entering the same `npm` and `git` commands, no more mistakes during the publication process. Make your package publication happen by running one command.
-
-* **Other features are on their way.** Please, read about upcoming features in [roadmap](#-roadmap) section.
+* **Clean setup.** No dependencies. Only configured TypeScript with `production` and `development` build modes;
+* **Tune compiler strictness.** Choose `base mode` to get TypeScript basic functionality or `advanced mode` to enable all kinds of checks;
+* **Easy publication _(optional)_.** No more fuss with package publication to `npm`;
+* **More features soon.** Please, read about upcoming features in [roadmap](#-roadmap) section.
 
 ## 🚀 Launch your project
 ### Quick overview
@@ -78,11 +78,12 @@ function doMyStuff (): number {
 That's why these checks are switched off for development. You won't get these errors in your build, but an IDE will still show you errors so that you don't forget to fix them. This is a really convenient approach.
 
 ## 📮 Publish your package
-When the first version of your package is ready to see the world, it's time to publish it.
+
+If you chose `npm package` as your project type, you can make your package publication happen by running one command.
 
 _Just run `npm run release` from the root directory of your project. That's it!_
 
-But before you start, please, check out next information in this section.
+Before you start, please, check out next information in this section.
 
 ### Check your git setup
 To use publication features it's necessary for your project to be a `git` repository.
@@ -141,7 +142,7 @@ _In other words, follow your goals!_
 
 ### Troubleshooting
 * In rare cases it's possible to get errors from somewhere of `node_modules/**/*d.ts`. It means some third-party library typings are broken. If you run into this problem you can solve it by adding `"skipDefaultLibCheck": true` to `compilerOptions` of `tsconfig.json`. _More information about `tsconfig` will be available soon._
-* If you chose `advanced` type checking, but run into the wall with it, you can rollback to `base` mode in two ways. The first way is to open `tsconfig.json` and invert a value of numerous options listed there. You can use hints from an IDE to detect exactly which options give you troubles. You are also able to toggle values one by one to find issuer. You can return toggled values when you will become more experienced. The second is to rollback to `base` mode permanently. To do that just remove `tsconfig.json`, and rename `tsconfig-base.json` to `tsconfig.json`.
+* If you chose `advanced` type checking, but run into the wall with it, you can rollback to `base` mode in two ways. The first way is to open `tsconfig.json` and invert a value of numerous options listed under `// Checks` comment. You can use hints from an IDE to detect exactly which options give you troubles. You are also able to toggle values one by one to find issuer. You can return toggled values when you will become more experienced. The second way is to permanently remove all the flags under `// Checks` comment.
 * It's possible to face a situation when you will get an error when trying to use some default object like `window`, `document`, `Promise` or some operators. It means you have to include library's build-in typings to your `tsconfig`. [List of allowed libraries](https://www.typescriptlang.org/tsconfig#lib) you can find here. Current example looks like that:
 ```json
 {

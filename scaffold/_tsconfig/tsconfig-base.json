@@ -14,7 +14,7 @@
     "declaration": true,
     "declarationDir": "./dist/__types__",
     "resolveJsonModule": true,
-
+    // Production specific
     "removeComments": true,
     "sourceMap": false,
     "watch": false

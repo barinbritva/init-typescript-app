@@ -13,7 +13,7 @@
           uses: actions/checkout@v2
 
         - name: Install dependencies
-          run: npm install
+          run: npm ci
 
         - name: Run build
           run: npm run build
