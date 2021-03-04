@@ -13,7 +13,7 @@ You are in the right repo if you want to:
 * **Clean setup.** No dependencies. Only configured TypeScript with `production` and `development` build modes;
 * **Tune compiler strictness.** Choose `base mode` to get TypeScript basic functionality or `advanced mode` to enable all kinds of checks;
 * **Easy publication _(optional)_.** No more fuss with package publication to `npm`;
-* **More features soon** Please, read about upcoming features in roadmap section.
+* **More features soon.** Please, read about upcoming features in [roadmap](#-roadmap) section.
 
 ## 🚀 Launch your project
 ### Quick overview
@@ -142,7 +142,7 @@ _In other words, follow your goals!_
 
 ### Troubleshooting
 * In rare cases it's possible to get errors from somewhere of `node_modules/**/*d.ts`. It means some third-party library typings are broken. If you run into this problem you can solve it by adding `"skipDefaultLibCheck": true` to `compilerOptions` of `tsconfig.json`. _More information about `tsconfig` will be available soon._
-* If you chose `advanced` type checking, but run into the wall with it, you can rollback to `base` mode in two ways. The first way is to open `tsconfig.json` and invert a value of numerous options listed there. You can use hints from an IDE to detect exactly which options give you troubles. You are also able to toggle values one by one to find issuer. You can return toggled values when you will become more experienced. The second is to rollback to `base` mode permanently. To do that just remove `tsconfig.json`, and rename `tsconfig-base.json` to `tsconfig.json`.
+* If you chose `advanced` type checking, but run into the wall with it, you can rollback to `base` mode in two ways. The first way is to open `tsconfig.json` and invert a value of numerous options listed under `// Checks` comment. You can use hints from an IDE to detect exactly which options give you troubles. You are also able to toggle values one by one to find issuer. You can return toggled values when you will become more experienced. The second way is to permanently remove all the flags under `// Checks` comment.
 * It's possible to face a situation when you will get an error when trying to use some default object like `window`, `document`, `Promise` or some operators. It means you have to include library's build-in typings to your `tsconfig`. [List of allowed libraries](https://www.typescriptlang.org/tsconfig#lib) you can find here. Current example looks like that:
 ```json
 {

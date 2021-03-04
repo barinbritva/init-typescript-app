@@ -18,11 +18,11 @@
       "ES6",
       "DOM"
     ],
-
+    // Production specific
     "removeComments": true,
     "sourceMap": false,
     "watch": false,
-
+    // Checks
     "allowUnreachableCode": false,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
