@@ -6,6 +6,10 @@
     "/dist"
   ],
   "types": "./dist/__types__",
+  "engines": {
+    "node": ">=12.10.0"
+  },
+  "engineStrict": true,
   "scripts": {
     "build": "ts-node ./tasks/run-build.ts",
     "build:dev": "ts-node --project ./tsconfig-dev.json ./tasks/run-build.ts -d",
