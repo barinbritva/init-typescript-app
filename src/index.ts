@@ -18,7 +18,9 @@ createApp()
       `\n\ncd ${config.name}\nnpm install\nnpm run build:dev` +
       '\n\nFor more information visit https://github.com/barinbritva/init-typescript-app'
     console.info(message)
+    process.exit(0)
   })
   .catch((error) => {
     console.error('Failed to create app.', error)
+    process.exit(1)
   })
