@@ -25,10 +25,11 @@ export async function release (): Promise<void> {
   await run(`git tag v${currentPackageVersion}`)
 
   console.info('Bump package version.')
-  await run('npm --no-git-tag-version version patch')
   const newPackageVersion = getVersionFromPackage()
+  const skipPreCommitCommand = process.platform === 'win32' ? 'set HUSKY_SKIP_HOOKS=1' : 'HUSKY_SKIP_HOOKS=1'
+  await run('npm --no-git-tag-version version patch')
   await run('git add package.json package-lock.json')
-  await run(`git commit -m "Bump version to ${newPackageVersion}."`)
+  await run(`${skipPreCommitCommand} && git commit -m "Bump version to ${newPackageVersion}."`)
 
   console.info('Push changes to Git.')
   await run('git push && git push --tags')
