@@ -1,3 +1,4 @@
+import fs from 'fs'
 import AppGenerator from './app-generator/AppGenerator'
 import AppConfigurator from './app-configurator/AppConfigurator'
 import AppConfig from './app-configurator/AppConfig'
@@ -12,6 +13,22 @@ async function createApp (): Promise<AppConfig> {
   return appConfig
 }
 
+function readAppMeta (): {name: string, version: string} {
+  const configData = fs.readFileSync('./package.json', 'utf8')
+  const packageJson = JSON.parse(configData)
+
+  if (
+    typeof packageJson.name === 'string' &&
+    typeof packageJson.version === 'string'
+  ) {
+    return packageJson
+  }
+
+  throw new Error('Can not read "name" and "version" from package.json.')
+}
+
+const appMeta = readAppMeta()
+console.info(`🚀 ${appMeta.name} v${appMeta.version}\n`)
 createApp()
   .then((config: AppConfig) => {
     const message = '\nIt\'s time to craft!' +
