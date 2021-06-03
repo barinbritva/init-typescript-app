@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.4] - 2021-06-03
+### Changed
+- Update TypeScript to v4.3.2
+
 ## [1.2.3] - 2021-06-03
 ### Fixed
 - Project creating process finishes with correct status code.
