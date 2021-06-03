@@ -195,5 +195,8 @@ interface Window {
 ## 🔙 Feedback
 Your feedback is really important for the project. Please, use contacts from [my profile](https://github.com/barinbritva) to send your questions, suggestions, help requests and others. Also, feel free to use [issues](https://github.com/barinbritva/init-typescript-app/issues) section to report bugs and problems.
 
+## 👛 Contributing
+See [CONTRIBUTING](https://github.com/barinbritva/init-typescript-app/blob/master/CONTRIBUTING.md)
+
 ## 📄 License
 MIT, see [LICENSE](https://github.com/barinbritva/init-typescript-app/blob/master/LICENSE) for the details.
