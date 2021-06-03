@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.2.1] - 2021-06-03
+## [1.2.3] - 2021-06-03
 ### Fixed
 - Project creating process finishes with correct status code.
 - Build works properly if `tsconfig.json` contains comments.
