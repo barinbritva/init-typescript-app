@@ -1,4 +1,5 @@
 import fs from 'fs'
+import path from 'path'
 import AppGenerator from './app-generator/AppGenerator'
 import AppConfigurator from './app-configurator/AppConfigurator'
 import AppConfig from './app-configurator/AppConfig'
@@ -14,7 +15,7 @@ async function createApp (): Promise<AppConfig> {
 }
 
 function readAppMeta (): {name: string, version: string} {
-  const configData = fs.readFileSync('./package.json', 'utf8')
+  const configData = fs.readFileSync(path.resolve(__dirname, './package.json'), 'utf8')
   const packageJson = JSON.parse(configData)
 
   if (
