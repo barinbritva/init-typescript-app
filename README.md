@@ -1,4 +1,5 @@
 # Init TypeScript App
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/barinbritva/init-typescript-app/Build?logo=github&style=flat-square)
 [![License](https://img.shields.io/npm/l/micromatch?style=flat-square)](https://github.com/barinbritva/init-typescript-app/blob/master/LICENSE)
 
 ## 🌟 Motivation
@@ -193,6 +194,9 @@ interface Window {
 
 ## 🔙 Feedback
 Your feedback is really important for the project. Please, use contacts from [my profile](https://github.com/barinbritva) to send your questions, suggestions, help requests and others. Also, feel free to use [issues](https://github.com/barinbritva/init-typescript-app/issues) section to report bugs and problems.
+
+## 👛 Contributing
+See [CONTRIBUTING](https://github.com/barinbritva/init-typescript-app/blob/master/CONTRIBUTING.md)
 
 ## 📄 License
 MIT, see [LICENSE](https://github.com/barinbritva/init-typescript-app/blob/master/LICENSE) for the details.

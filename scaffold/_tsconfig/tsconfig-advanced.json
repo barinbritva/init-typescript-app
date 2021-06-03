@@ -29,8 +29,7 @@
     "strictBindCallApply": true,
     "strictFunctionTypes": true,
     "strictNullChecks": true,
-    "strictPropertyInitialization": true,
-    "suppressImplicitAnyIndexErrors": true
+    "strictPropertyInitialization": true
   },
   "include": [
     "./src"

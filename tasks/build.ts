@@ -2,22 +2,21 @@ import fs from 'fs'
 import { run } from './process'
 
 function readOutDirNameFromConfig (): string | null {
-  const commentsRegExp = new RegExp(/\/\/(.*)/, 'g')
-  let configData = fs.readFileSync('./tsconfig.json', 'utf8')
-  configData = configData.replace(commentsRegExp, '')
-  const config = JSON.parse(configData)
+  const outDirRegExp = new RegExp(/["|']outDir["|']:\s?["|'](.*)["|']/)
+  const configData = fs.readFileSync('./tsconfig.json', 'utf8')
+  const matchResult = configData.match(outDirRegExp)
 
-  if (typeof config === 'object' && config?.compilerOptions?.outDir != null) {
-    return String(config.compilerOptions.outDir)
-  } else {
+  if (matchResult == null) {
     return null
+  } else {
+    return matchResult[1]
   }
 }
 
 export async function build (mode: 'production' | 'development'): Promise<string> {
   const distPath = readOutDirNameFromConfig()
   if (distPath == null) {
-    throw new Error('Option "compilerOptions.outDir" is not specified in tsconfig.json.')
+    throw new Error('Option "compilerOptions.outDir" must be specified in tsconfig.json.')
   }
 
   let buildCommand = 'tsc'
