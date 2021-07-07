@@ -1,3 +1,2 @@
 scaffold/* linguist-detectable=false
 tasks/* linguist-detectable=false
-src/cli.ts linguist-language=TypeScript
