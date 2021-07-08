@@ -1,2 +1,2 @@
-scaffold/* -linguist-detectable
+scaffold/_licenses/* -linguist-detectable
 src/cli.ts linguist-language=TypeScript
