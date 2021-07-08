@@ -1,0 +1,2 @@
+scaffold/* -linguist-detectable
+src/cli.ts linguist-language=TypeScript
