@@ -1,5 +1,5 @@
 # Init TypeScript App
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/barinbritva/init-typescript-app/Build?logo=github&style=flat-square)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/barinbritva/init-typescript-app/Build?logo=github&style=flat-square&color=green)
 [![License](https://img.shields.io/npm/l/micromatch?style=flat-square)](https://github.com/barinbritva/init-typescript-app/blob/master/LICENSE)
 
 ## 🌟 Motivation
