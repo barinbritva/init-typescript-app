@@ -1,80 +1,66 @@
 {
-  "name": "init-typescript-app",
-  "version": "1.2.5",
-  "description": "Initialize TypeScript app by running single command.",
-  "keywords": [
-    "typescript",
-    "build-tool",
-    "zero-configuration",
-    "package-creation",
-    "boilerplate",
-    "starter-kit"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/barinbritva/init-typescript-app.git"
-  },
-  "bugs": {
-    "url": "https://github.com/barinbritva/init-typescript-app/issues"
-  },
-  "homepage": "https://github.com/barinbritva/init-typescript-app#readme",
-  "author": {
-    "name": "Barin Britva",
-    "email": "barinbritva@outlook.com",
-    "url": "https://barinbritva.com"
-  },
-  "license": "MIT",
-  "main": "./dist/index.js",
-  "files": [
-    "/dist",
-    "/scaffold"
-  ],
-  "bin": {
-    "init-typescript-app": "./dist/cli.js"
-  },
-  "types": "./dist/__types__",
-  "engines": {
-    "node": ">=12.10.0"
-  },
-  "engineStrict": true,
-  "scripts": {
-    "build": "ts-node ./tasks/run-build.ts",
-    "build:dev": "ts-node ./tasks/run-build.ts -d",
-    "start": "node ./dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "ts-node ./tasks/run-release.ts"
-  },
-  "devDependencies": {
-    "@types/ejs": "^3.0.4",
-    "@types/inquirer": "^7.3.0",
-    "@typescript-eslint/eslint-plugin": "^3.9.0",
-    "@typescript-eslint/parser": "^3.9.0",
-    "eslint": "^7.6.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-config-standard-with-typescript": "^18.0.2",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.11",
-    "prettier": "^2.0.5",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.3.2"
-  },
-  "dependencies": {
-    "ejs": "^3.1.3",
-    "inquirer": "^7.3.3"
-  },
-  "lint-staged": {
-    "*.{ts,js,tsx,jsx}": [
-      "eslint --fix"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && tsc --noEmit"
-    }
-  }
+	"name": "init-typescript-app",
+	"version": "1.2.5",
+	"description": "Initialize TypeScript app by running single command.",
+	"keywords": [
+		"typescript",
+		"build-tool",
+		"zero-configuration",
+		"package-creation",
+		"boilerplate",
+		"starter-kit"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/barinbritva/init-typescript-app.git"
+	},
+	"bugs": {
+		"url": "https://github.com/barinbritva/init-typescript-app/issues"
+	},
+	"homepage": "https://github.com/barinbritva/init-typescript-app#readme",
+	"author": {
+		"name": "Barin Britva",
+		"email": "barinbritva@outlook.com",
+		"url": "https://barinbritva.com"
+	},
+	"license": "MIT",
+	"main": "./dist/index.js",
+	"files": ["/dist", "/scaffold"],
+	"bin": {
+		"init-typescript-app": "./dist/cli.js"
+	},
+	"types": "./dist/__types__",
+	"engines": {
+		"node": ">=12.10.0"
+	},
+	"engineStrict": true,
+	"scripts": {
+		"build": "ts-node ./tasks/run-build.ts",
+		"build:dev": "ts-node ./tasks/run-build.ts -d",
+		"start": "node ./dist/index.js",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"release": "ts-node ./tasks/run-release.ts"
+	},
+	"devDependencies": {
+		"@types/ejs": "^3.0.4",
+		"@types/inquirer": "^7.3.0",
+		"@types/node": "^20.6.2",
+		"husky": "^4.2.5",
+		"lint-staged": "^10.2.11",
+		"prettier": "^2.0.5",
+		"ts-node": "^9.1.1",
+		"typescript": "^4.3.2"
+	},
+	"dependencies": {
+		"ejs": "^3.1.3",
+		"inquirer": "^7.3.3"
+	},
+	"lint-staged": {
+		"*.{ts,js,tsx,jsx,json}": ["prettier --write --ignore-unknown"]
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged && tsc --noEmit"
+		}
+	}
 }

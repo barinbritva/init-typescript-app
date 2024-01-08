@@ -1,10 +1,8 @@
-import { finishWithFail, finishWithSuccess } from './process'
-import { release } from './release'
+import {finishWithFail, finishWithSuccess} from './process';
+import {release} from './release';
 
 try {
-  release()
-    .then(finishWithSuccess.bind(null, 'Successfully released.'))
-    .catch(finishWithFail)
+	release().then(finishWithSuccess.bind(null, 'Successfully released.')).catch(finishWithFail);
 } catch (error) {
-  finishWithFail(error)
+	finishWithFail(error);
 }
