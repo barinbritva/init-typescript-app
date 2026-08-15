@@ -28,7 +28,7 @@ export async function release (): Promise<void> {
   await run('npm --no-git-tag-version version patch')
   const newPackageVersion = getVersionFromPackage()
   await run('git add package.json package-lock.json')
-  await run(`git commit -m "Bump version to ${newPackageVersion}."`)
+  await run(`git commit --no-verify -m "Bump version to ${newPackageVersion}."`)
 
   console.info('Push changes to Git.')
   await run('git push && git push --tags')
